@@ -3,6 +3,7 @@ using System;
 using BRW.API.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BRW.API.Migrations
 {
     [DbContext(typeof(BrwAppContext))]
-    partial class BrwAppContextModelSnapshot : ModelSnapshot
+    [Migration("20220117202709_fkTry")]
+    partial class fkTry
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -271,11 +273,6 @@ namespace BRW.API.Migrations
                         .HasColumnType("boolean")
                         .HasColumnName("deleted");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("discriminator");
-
                     b.Property<string>("Email")
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)")
@@ -324,22 +321,6 @@ namespace BRW.API.Migrations
                         .HasDatabaseName("ix_users_team_id");
 
                     b.ToTable("users", (string)null);
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
-                });
-
-            modelBuilder.Entity("BRW.API.Entities.Player", b =>
-                {
-                    b.HasBaseType("BRW.API.Entities.User");
-
-                    b.Property<int>("ChampionshipPlayedId")
-                        .HasColumnType("integer")
-                        .HasColumnName("championship_played_id");
-
-                    b.HasIndex("ChampionshipPlayedId")
-                        .HasDatabaseName("ix_users_championship_played_id");
-
-                    b.HasDiscriminator().HasValue("Player");
                 });
 
             modelBuilder.Entity("BRW.API.Entities.Championship", b =>
@@ -403,25 +384,11 @@ namespace BRW.API.Migrations
                         .HasConstraintName("fk_users_teams_team_id");
                 });
 
-            modelBuilder.Entity("BRW.API.Entities.Player", b =>
-                {
-                    b.HasOne("BRW.API.Entities.Championship", "Championship")
-                        .WithMany("Players")
-                        .HasForeignKey("ChampionshipPlayedId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_users_championship_championship_id2");
-
-                    b.Navigation("Championship");
-                });
-
             modelBuilder.Entity("BRW.API.Entities.Championship", b =>
                 {
                     b.Navigation("Apresentadores");
 
                     b.Navigation("Mvps");
-
-                    b.Navigation("Players");
                 });
 
             modelBuilder.Entity("BRW.API.Entities.Game", b =>

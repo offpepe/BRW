@@ -4,5 +4,7 @@ namespace BRW.API.Entities;
 
 public class Team: Basis
 {
-    public int GroupId { get; set; }
+    public List<Championship> Championships { get; set; }
+    public List<User> Players { get; set; }
+    public List<Prize> Prizes { get; set; }
 }

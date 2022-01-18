@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var connectionString = builder.Configuration.GetConnectionString("postgresConnectionString");
-builder.Services.AddDbContext<BrwAppContext>(options => options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<BrwAppContext>(options => options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention());
 
 
 
