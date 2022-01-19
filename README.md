@@ -29,7 +29,7 @@ Is planned to use:
 - S3 Bucket or some AWS service that can manage file storage
 
 
-### API endpoits
+### API endpoits 🛣️
 
 - GET -> /api/user -> get all users;
 - GET -> /api/user:{id} -> get user by id;
