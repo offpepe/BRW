@@ -29,6 +29,21 @@ Is planned to use:
 - S3 Bucket or some AWS service that can manage file storage
 
 
+### Building environment ♻️
+
+Has you can see above, we use makefile to shell scripts, so is way more easy to mount the environment images!
+
+- To mount API and Database you can use:
+```zsh
+ make -i start
+```
+_it's valid to remember that in linux environments the api will not works into docker if don't configure to migrate from https to http automatically when the build be made, an feature that exists in windows environments, so, windows should be the best environment to run this project._
+- to unmount API and Database you can use:
+```zsh
+ make -i kill
+```
+
+
 ### API endpoits 🛣️
 
 - GET -> /api/user -> get all users;
