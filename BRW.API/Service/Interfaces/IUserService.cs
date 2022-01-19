@@ -7,7 +7,7 @@ public interface IUserService
 
     public Task<IEnumerable<User>> GetUsers(); 
 
-    public Task<User> GetUserById(Guid id);
+    public Task<User> GetUserById(int id);
 
 
     public Task RegisterUser(User user);

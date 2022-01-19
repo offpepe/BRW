@@ -17,7 +17,7 @@ public class UsersService : IUserService
     public async Task<IEnumerable<User>> GetUsers() => await _context.Users.ToListAsync();
 
 
-    public async Task<User> GetUserById(Guid id) => await _context.Users.FindAsync(id);
+    public async Task<User> GetUserById(int id) => await _context.Users.FindAsync(id);
 
     public async Task RegisterUser(User user)
     {
