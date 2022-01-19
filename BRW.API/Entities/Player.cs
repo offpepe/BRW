@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations.Schema;
-using BRW.API.Entities.Interfaces;
 
 namespace BRW.API.Entities;
 
