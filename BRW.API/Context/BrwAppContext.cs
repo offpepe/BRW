@@ -18,13 +18,6 @@ public class BrwAppContext: DbContext
     public DbSet<Game> Games { get; set; }
     
     public DbSet<Prize> Prizes { get; set; }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Player>()
-            .HasOne(c => c.Championship)
-            .WithMany(p => p.Players)
-            .HasForeignKey(p => p.ChampionshipPlayedId);
-    }
+    
 
 }
