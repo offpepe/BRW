@@ -1,7 +1,6 @@
 using BRW.API.Context;
 using BRW.API.Service;
 using BRW.API.Service.Interfaces;
-using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

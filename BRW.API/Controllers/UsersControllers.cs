@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BRW.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/user")]
 [ApiController]
 public class UsersControllers : ControllerBase
 {
@@ -20,7 +20,7 @@ public class UsersControllers : ControllerBase
         try
         {
             var users = await _userService.GetUsers();
-            if (users != null)
+            if (users.Any())
             {
                 return Ok(users);
             }
@@ -33,5 +33,34 @@ public class UsersControllers : ControllerBase
         {
             return StatusCode(StatusCodes.Status500InternalServerError, "Error on search users");
         }
+    }
+
+    [HttpGet("{id:int}", Name = "GetUserById")]
+    public async Task<ActionResult<User>> GetUserById(int id)
+    {
+        try
+        {
+            var user = await _userService.GetUserById(id);
+            return user != null ? Ok(user) : StatusCode(StatusCodes.Status204NoContent);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, $"Error on search user => {e.Message}");
+        }
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> CreateUser(User user)
+    {
+        try
+        {
+            await _userService.RegisterUser(user);
+            return CreatedAtRoute(nameof(GetUserById), new { id = user.Id }, user);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError, $"Error on request => {e.Message}");
+        }
+        
     }
 }
