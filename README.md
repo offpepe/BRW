@@ -1,7 +1,16 @@
+![dotnet --info](https://img.shields.io/badge/.net%20core-6.0.1-%235123C1)
+![EF --version](https://img.shields.io/badge/entity%20framework-6.0.1-%2354D8FF)
+![swagger --version](https://img.shields.io/badge/swagger-6.2.3-%2358E869)
+
 <div align="center">
 
 # BRW API 🎮
-
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+![Rider](https://img.shields.io/badge/Rider-000000.svg?style=for-the-badge&logo=Rider&logoColor=white&color=black&labelColor=crimson)
+ 
 </div>
 
 
