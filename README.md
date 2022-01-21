@@ -58,6 +58,6 @@ _it's valid to remember that in linux environments the api will not works into d
   
 project being made by Alan Albuquerque aka [@offpepe](https://github.com/offpepe/), having technical mentoring by Guilherme FGR aka [@Guifgr](https://github.com/Guifgr)
  <br/>
-  being made by didactic purposes with the heart ❤️❤️❤️❤️❤️
+  being made by didactic purposes with the ❤️❤️❤️❤️❤️
   
 </div>
