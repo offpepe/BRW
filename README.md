@@ -44,12 +44,12 @@ Has you can see above, we use makefile to shell scripts, so is way more easy to 
 
 - To mount API and Database you can use:
 ```zsh
- make -i start
+ make -i deploy-project
 ```
 _it's valid to remember that in linux environments the api will not works into docker if don't configure to migrate from https to http automatically when the build be made, an feature that exists in windows environments, so, windows should be the best environment to run this project._
 - to unmount API and Database you can use:
 ```zsh
- make -i kill
+ make -i kill-app
 ```
 
 
